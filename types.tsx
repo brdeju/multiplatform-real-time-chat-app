@@ -4,7 +4,7 @@
  */
 
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
+import { CompositeScreenProps, RouteProp } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 declare global {
@@ -14,8 +14,12 @@ declare global {
 }
 
 export type RootStackParamList = {
-  Root: NavigatorScreenParams<RootTabParamList> | undefined;
-  Modal: undefined;
+  Root: RootTabParamList;
+  ChatRoom: {
+    id: string;
+    name: string;
+  };
+  NewMessage: undefined;
   NotFound: undefined;
 };
 
@@ -25,11 +29,34 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> = Nati
 >;
 
 export type RootTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Chats: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
   BottomTabScreenProps<RootTabParamList, Screen>,
   NativeStackScreenProps<RootStackParamList>
 >;
+
+export type ChatListItemProps = {
+  chat: Chat;
+}
+
+export type ChatRoomScreenRouteProp = RouteProp<RootStackParamList, 'ChatRoom'>
+
+export type User = {
+  uuid: string;
+  username: string;
+}
+
+export type Message = {
+  uuid: string;
+  content: string;
+  createdAt: string;
+  user: User;
+}
+
+export type Chat = {
+  uuid: string;
+  users: User[];
+  lastMessage: Message;
+}
