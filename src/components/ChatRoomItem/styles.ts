@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
   badgeText: {
     color: 'white',
-    fontSize: 12
+    fontSize: 12,
   },
   rightContainer: {
     flex: 1,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'grey',
-  }
+  },
 });
 
 export default styles;

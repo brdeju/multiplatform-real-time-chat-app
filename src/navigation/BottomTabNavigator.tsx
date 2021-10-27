@@ -18,19 +18,23 @@ export default function BottomTabNavigator() {
       initialRouteName="Chats"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
-      }}>
+      }}
+    >
       <BottomTab.Screen
         name="Chats"
         component={ChatsScreen}
         options={({ navigation }: RootTabScreenProps<'Chats'>) => ({
           title: 'Chats',
-          tabBarIcon: ({ color }) => <TabBarIcon name="comment" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="comment" color={color} />
+          ),
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('NewMessage')}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
-              })}>
+              })}
+            >
               <FontAwesome
                 name="edit"
                 size={25}

@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from "react";
-import {
-  Text,
-  StyleSheet,
-  Pressable,
-} from "react-native";
+import React, { useState, useEffect } from 'react';
+import { Text, StyleSheet, Pressable } from 'react-native';
 // import { useActionSheet } from "@expo/react-native-action-sheet";
-import { Ionicons } from "@expo/vector-icons";
-import { Message as MessageModel } from "../../src/models";
+import { Ionicons } from '@expo/vector-icons';
+import { Message as MessageModel } from '../../src/models';
 
-const blue = "#3777f0";
-const grey = "lightgrey";
+const blue = '#3777f0';
+const grey = 'lightgrey';
 
 const Message = ({ message: propMessage }: { message: MessageModel }) => {
   const [message, setMessage] = useState<MessageModel>(propMessage);
@@ -33,9 +29,7 @@ const Message = ({ message: propMessage }: { message: MessageModel }) => {
         isMe ? styles.rightContainer : styles.leftContainer,
       ]}
     >
-      <Text style={{ color: isMe ? "black" : "white" }}>
-        {message.content}
-      </Text>
+      <Text style={{ color: isMe ? 'black' : 'white' }}>{message.content}</Text>
 
       {isMe && (
         <Ionicons
@@ -54,27 +48,27 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     borderRadius: 10,
-    maxWidth: "75%",
+    maxWidth: '75%',
   },
   row: {
-    flexDirection: "row",
-    alignItems: "flex-end",
+    flexDirection: 'row',
+    alignItems: 'flex-end',
   },
   messageReply: {
-    backgroundColor: "gray",
+    backgroundColor: 'gray',
     padding: 5,
     borderRadius: 5,
   },
   leftContainer: {
     backgroundColor: blue,
     marginLeft: 10,
-    marginRight: "auto",
+    marginRight: 'auto',
   },
   rightContainer: {
     backgroundColor: grey,
-    marginLeft: "auto",
+    marginLeft: 'auto',
     marginRight: 10,
-    alignItems: "flex-end",
+    alignItems: 'flex-end',
   },
 });
 

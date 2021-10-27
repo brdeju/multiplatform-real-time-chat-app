@@ -1,25 +1,33 @@
-import React from "react";
-import { Text, Image, View, Pressable } from "react-native";
-import { useNavigation } from "@react-navigation/core";
+import React from 'react';
+import { Text, Image, View, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 import UserAvatar from 'react-native-user-avatar';
-import moment from "moment";
-import { User, Message, ChatRoom } from "../../src/models";
-import styles from "./styles";
+import moment from 'moment';
+import { User, Message, ChatRoom } from '../../src/models';
+import styles from './styles';
 
 export default function ChatRoomItem({ chatRoom }: { chatRoom: ChatRoom }) {
   const navigation = useNavigation();
-  const user = chatRoom.users.find(u => u.name !== 'Greg') as User; // the display user
-  const lastMessage: Message = chatRoom.lastMessage;
+  const user = chatRoom.users.find(u => u.name !== 'Greg'); // the display user
+  const { lastMessage } = chatRoom;
 
   const onPress = () => {
-    navigation.navigate("ChatRoom", { id: chatRoom.id, name: user?.name || '' });
+    navigation.navigate('ChatRoom', {
+      id: chatRoom.id,
+      name: user?.name || '',
+    });
   };
 
   const time = moment(lastMessage?.createdAt).from(moment());
 
   return (
     <Pressable onPress={onPress} style={styles.container}>
-      <UserAvatar size={50} name={user?.name} src={user?.imageUri} style={styles.image} />
+      <UserAvatar
+        size={50}
+        name={user?.name}
+        src={user?.imageUri}
+        style={styles.image}
+      />
 
       {!!chatRoom.newMessages && (
         <View style={styles.badgeContainer}>

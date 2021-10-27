@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   View,
   StyleSheet,
@@ -6,22 +6,19 @@ import {
   Pressable,
   KeyboardAvoidingView,
   Platform,
-} from "react-native";
-import {
-  AntDesign,
-  Ionicons,
-} from "@expo/vector-icons";
+} from 'react-native';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 
 const MessageInput = () => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   const sendMessage = async () => {
-    console.log('message', message)
+    console.log('message', message);
     resetFields();
   };
 
   const onPlusClicked = () => {
-    console.warn("On plus clicked");
+    console.warn('On plus clicked');
   };
 
   const onPress = () => {
@@ -33,13 +30,13 @@ const MessageInput = () => {
   };
 
   const resetFields = () => {
-    setMessage("");
+    setMessage('');
   };
 
   return (
     <KeyboardAvoidingView
-      style={[styles.root, { height: "auto" }]}
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={[styles.root, { height: 'auto' }]}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       keyboardVerticalOffset={100}
     >
       <View style={styles.row}>
@@ -69,17 +66,17 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   row: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   inputContainer: {
-    backgroundColor: "#f2f2f2",
+    backgroundColor: '#f2f2f2',
     flex: 1,
     marginRight: 10,
     borderRadius: 25,
     borderWidth: 1,
-    borderColor: "#dedede",
-    alignItems: "center",
-    flexDirection: "row",
+    borderColor: '#dedede',
+    alignItems: 'center',
+    flexDirection: 'row',
     padding: 5,
   },
   input: {
@@ -92,13 +89,13 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: 40,
     height: 40,
-    backgroundColor: "#3777f0",
+    backgroundColor: '#3777f0',
     borderRadius: 25,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonText: {
-    color: "white",
+    color: 'white',
     fontSize: 35,
   },
 });

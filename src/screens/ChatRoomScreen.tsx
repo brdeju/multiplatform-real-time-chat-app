@@ -6,14 +6,14 @@ import Message from '../components/Message';
 import MessageInput from '../components/MessageInput';
 
 import { ChatRoomScreenRouteProp } from '../types';
-import { Message as MessageModel } from "../src/models";
+import { Message as MessageModel } from '../src/models';
 
 import CHAT from '../assets/dummy-data/Chat';
 
 export default function ChatRoomScreen() {
   const route = useRoute<ChatRoomScreenRouteProp>();
   const chatId = route.params.id;
-  const name = route.params.name;
+  const { name } = route.params;
   const chat = CHAT;
   const messages = chat.messages as Array<MessageModel>;
 
@@ -32,7 +32,7 @@ export default function ChatRoomScreen() {
 
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: "white",
+    backgroundColor: 'white',
     flex: 1,
   },
 });
