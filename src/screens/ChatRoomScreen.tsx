@@ -5,10 +5,10 @@ import { FlatList, SafeAreaView, StyleSheet } from 'react-native';
 import Message from '../components/Message';
 import MessageInput from '../components/MessageInput';
 
-import { ChatRoomScreenRouteProp } from '../types';
-import { Message as MessageModel } from '../src/models';
+import { ChatRoomScreenRouteProp } from '../../types';
+import { Message as MessageModel } from '../models';
 
-import CHAT from '../assets/dummy-data/Chat';
+import CHAT from '../../assets/dummy-data/Chat';
 
 export default function ChatRoomScreen() {
   const route = useRoute<ChatRoomScreenRouteProp>();

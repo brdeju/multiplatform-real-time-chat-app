@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, StyleSheet, Pressable } from 'react-native';
 // import { useActionSheet } from "@expo/react-native-action-sheet";
 import { Ionicons } from '@expo/vector-icons';
-import { Message as MessageModel } from '../../src/models';
+import { Message as MessageModel } from '../../models';
 
 const blue = '#3777f0';
 const grey = 'lightgrey';

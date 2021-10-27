@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { View, StyleSheet, FlatList } from 'react-native';
-import { ChatRoom } from '../src/models';
+import { ChatRoom } from '../models';
 import ChatRoomItem from '../components/ChatRoomItem';
-import CHAT_ROOMS from '../assets/dummy-data/ChatRooms';
+import CHAT_ROOMS from '../../assets/dummy-data/ChatRooms';
 
 export default function TabOneScreen() {
   const chatRooms: Array<ChatRoom> = CHAT_ROOMS as Array<ChatRoom>;

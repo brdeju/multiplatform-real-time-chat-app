@@ -14,7 +14,7 @@ import ChatRoomScreen from '../screens/ChatRoomScreen';
 import ModalScreen from '../screens/ModalScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
-import { RootStackParamList } from '../types';
+import { RootStackParamList } from '../../types';
 
 export default function Navigation({
   colorScheme,

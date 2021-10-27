@@ -6,7 +6,7 @@ import { Pressable } from 'react-native';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ChatsScreen from '../screens/ChatsScreen';
-import { RootTabParamList, RootTabScreenProps } from '../types';
+import { RootTabParamList, RootTabScreenProps } from '../../types';
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
