@@ -1,12 +1,13 @@
+import React from 'react';
+import { Pressable } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import * as React from 'react';
-import { Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ChatsScreen from '../screens/ChatsScreen';
 import { RootTabParamList, RootTabScreenProps } from '../../types';
+import SignOutScreen from '../screens/SignOutScreen';
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
@@ -25,9 +26,7 @@ export default function BottomTabNavigator() {
         component={ChatsScreen}
         options={({ navigation }: RootTabScreenProps<'Chats'>) => ({
           title: 'Chats',
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="comment" color={color} />
-          ),
+          tabBarIcon: ({ color }) => <TabBarIcon name="comment" color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('NewMessage')}
@@ -35,23 +34,23 @@ export default function BottomTabNavigator() {
                 opacity: pressed ? 0.5 : 1,
               })}
             >
-              <FontAwesome
-                name="edit"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
+              <FontAwesome name="edit" size={25} color={Colors[colorScheme].text} style={{ marginRight: 15 }} />
             </Pressable>
           ),
+        })}
+      />
+      <BottomTab.Screen
+        name="Logout"
+        component={SignOutScreen}
+        options={() => ({
+          title: 'Logout',
+          tabBarIcon: ({ color }) => <TabBarIcon name="sign-out" color={color} />,
         })}
       />
     </BottomTab.Navigator>
   );
 }
 
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
+function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
 }
