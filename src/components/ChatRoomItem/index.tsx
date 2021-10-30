@@ -8,7 +8,7 @@ import styles from './styles';
 
 export default function ChatRoomItem({ chatRoom }: { chatRoom: ChatRoom }) {
   const navigation = useNavigation();
-  const user = chatRoom.users.find(u => u.name !== 'Greg'); // the display user
+  const user = chatRoom.users.find((u) => u.name !== 'Greg'); // the display user
   const { lastMessage } = chatRoom;
 
   const onPress = () => {
@@ -22,12 +22,7 @@ export default function ChatRoomItem({ chatRoom }: { chatRoom: ChatRoom }) {
 
   return (
     <Pressable onPress={onPress} style={styles.container}>
-      <UserAvatar
-        size={50}
-        name={user?.name}
-        src={user?.imageUri}
-        style={styles.image}
-      />
+      <UserAvatar size={50} name={user?.name} src={user?.imageUri} style={styles.image} />
 
       {!!chatRoom.newMessages && (
         <View style={styles.badgeContainer}>

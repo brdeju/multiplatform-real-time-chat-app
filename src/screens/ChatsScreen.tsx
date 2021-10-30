@@ -10,11 +10,7 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.page}>
-      <FlatList
-        data={chatRooms}
-        renderItem={({ item }) => <ChatRoomItem chatRoom={item} />}
-        showsVerticalScrollIndicator={false}
-      />
+      <FlatList data={chatRooms} renderItem={({ item }) => <ChatRoomItem chatRoom={item} />} showsVerticalScrollIndicator={false} />
     </View>
   );
 }

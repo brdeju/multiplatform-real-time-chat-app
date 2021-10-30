@@ -19,12 +19,7 @@ export default function ChatRoomScreen() {
 
   return (
     <SafeAreaView style={styles.page}>
-      <FlatList
-        data={messages}
-        renderItem={({ item }: { item: MessageModel }) => (
-          <Message message={item} />
-        )}
-      />
+      <FlatList data={messages} renderItem={({ item }: { item: MessageModel }) => <Message message={item} />} />
       <MessageInput />
     </SafeAreaView>
   );

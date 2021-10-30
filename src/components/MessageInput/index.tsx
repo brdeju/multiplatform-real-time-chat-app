@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  View,
-  StyleSheet,
-  TextInput,
-  Pressable,
-  KeyboardAvoidingView,
-  Platform,
-} from 'react-native';
+import { View, StyleSheet, TextInput, Pressable, KeyboardAvoidingView, Platform } from 'react-native';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
 
 const MessageInput = () => {
@@ -41,20 +34,11 @@ const MessageInput = () => {
     >
       <View style={styles.row}>
         <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.input}
-            value={message}
-            onChangeText={setMessage}
-            placeholder="Send message..."
-          />
+          <TextInput style={styles.input} value={message} onChangeText={setMessage} placeholder="Send message..." />
         </View>
 
         <Pressable onPress={onPress} style={styles.buttonContainer}>
-          {message ? (
-            <Ionicons name="send" size={18} color="white" />
-          ) : (
-            <AntDesign name="plus" size={24} color="white" />
-          )}
+          {message ? <Ionicons name="send" size={18} color="white" /> : <AntDesign name="plus" size={24} color="white" />}
         </Pressable>
       </View>
     </KeyboardAvoidingView>

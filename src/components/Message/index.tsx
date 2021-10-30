@@ -23,22 +23,10 @@ const Message = ({ message: propMessage }: { message: MessageModel }) => {
   }, [message]);
 
   return (
-    <Pressable
-      style={[
-        styles.container,
-        isMe ? styles.rightContainer : styles.leftContainer,
-      ]}
-    >
+    <Pressable style={[styles.container, isMe ? styles.rightContainer : styles.leftContainer]}>
       <Text style={{ color: isMe ? 'black' : 'white' }}>{message.content}</Text>
 
-      {isMe && (
-        <Ionicons
-          name="checkmark"
-          size={16}
-          color="gray"
-          style={{ marginHorizontal: 5 }}
-        />
-      )}
+      {isMe && <Ionicons name="checkmark" size={16} color="gray" style={{ marginHorizontal: 5 }} />}
     </Pressable>
   );
 };
