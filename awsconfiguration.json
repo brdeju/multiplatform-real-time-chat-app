@@ -1,0 +1,28 @@
+﻿{
+    "UserAgent": "aws-amplify-cli/0.1.0",
+    "Version": "1.0",
+    "IdentityManager": {
+        "Default": {}
+    },
+    "AppSync": {
+        "Default": {
+            "ApiUrl": "https://ofuov5aedzhihel4d3gg37bsqa.appsync-api.eu-central-1.amazonaws.com/graphql",
+            "Region": "eu-central-1",
+            "AuthMode": "AMAZON_COGNITO_USER_POOLS",
+            "ClientDatabasePrefix": "ChatApp-staging_AMAZON_COGNITO_USER_POOLS"
+        },
+        "ChatApp-staging_API_KEY": {
+            "ApiUrl": "https://ofuov5aedzhihel4d3gg37bsqa.appsync-api.eu-central-1.amazonaws.com/graphql",
+            "Region": "eu-central-1",
+            "AuthMode": "API_KEY",
+            "ApiKey": "da2-uoiowrbuyvgbvgjphh7o3s4vge",
+            "ClientDatabasePrefix": "ChatApp-staging_API_KEY"
+        },
+        "ChatApp-staging_AWS_IAM": {
+            "ApiUrl": "https://ofuov5aedzhihel4d3gg37bsqa.appsync-api.eu-central-1.amazonaws.com/graphql",
+            "Region": "eu-central-1",
+            "AuthMode": "AWS_IAM",
+            "ClientDatabasePrefix": "ChatApp-staging_AWS_IAM"
+        }
+    }
+}
