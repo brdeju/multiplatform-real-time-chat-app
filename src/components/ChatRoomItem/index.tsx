@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, View, Pressable } from 'react-native';
+import { Text, View, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import UserAvatar from 'react-native-user-avatar';
 import moment from 'moment';

@@ -35,8 +35,8 @@ export declare class ChatRoom {
   readonly id: string;
   readonly newMessages?: number;
   readonly lastMessage?: Message;
-  readonly messages?: (Message | null)[];
-  readonly chatRoomUsers?: (ChatRoomUser | null)[];
+  readonly Messages?: (Message | null)[];
+  readonly ChatRoomUsers?: (ChatRoomUser | null)[];
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<ChatRoom, ChatRoomMetaData>);
@@ -45,8 +45,8 @@ export declare class ChatRoom {
 
 export declare class ChatRoomUser {
   readonly id: string;
-  readonly chatroom: ChatRoom;
   readonly user: User;
+  readonly chatroom: ChatRoom;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<ChatRoomUser, ChatRoomUserMetaData>);
@@ -58,8 +58,8 @@ export declare class User {
   readonly name: string;
   readonly imageUri?: string;
   readonly status?: string;
-  readonly messages?: (Message | null)[];
-  readonly chatrooms?: (ChatRoomUser | null)[];
+  readonly Messages?: (Message | null)[];
+  readonly Chatrooms?: (ChatRoomUser | null)[];
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<User, UserMetaData>);

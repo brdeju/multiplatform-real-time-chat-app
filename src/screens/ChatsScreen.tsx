@@ -5,7 +5,7 @@ import { ChatRoom } from '../models';
 import ChatRoomItem from '../components/ChatRoomItem';
 import CHAT_ROOMS from '../../assets/dummy-data/ChatRooms';
 
-export default function TabOneScreen() {
+export default function ChatsScreen() {
   const chatRooms: Array<ChatRoom> = CHAT_ROOMS as Array<ChatRoom>;
 
   return (

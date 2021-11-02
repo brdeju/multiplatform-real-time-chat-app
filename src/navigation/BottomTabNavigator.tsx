@@ -8,6 +8,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import ChatsScreen from '../screens/ChatsScreen';
 import { RootTabParamList, RootTabScreenProps } from '../../types';
 import SignOutScreen from '../screens/SignOutScreen';
+import UsersScreen from '../screens/UsersScreen';
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
@@ -37,6 +38,14 @@ export default function BottomTabNavigator() {
               <FontAwesome name="edit" size={25} color={Colors[colorScheme].text} style={{ marginRight: 15 }} />
             </Pressable>
           ),
+        })}
+      />
+      <BottomTab.Screen
+        name="Users"
+        component={UsersScreen}
+        options={() => ({
+          title: 'Contacts',
+          tabBarIcon: ({ color }) => <TabBarIcon name="users" color={color} />,
         })}
       />
       <BottomTab.Screen
